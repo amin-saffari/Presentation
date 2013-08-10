@@ -1,4 +1,4 @@
-SBC_UniqPeptide
+Presentation
 ===============
 
-Presentation about my project at Lukas group
+Presentation about my project at Lars feuk
