@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title></title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- SLIDE STUFF HERE -->
+<section>
+<h2 class="title">Exploring the diversity of unmapped reads from human deep sequencing</h2>
+<br><br>
+<h3 class="author">Amin Saffari</h3>
+<h4 class="date">13-08-12</h4>
+<img src="figure/UU.png" width=10% height=10%></p>
+<!--<small> Uppsala University</small> -->
+</section>
+<section class="slide level1" id="agenda">
+<h2 id="HRG">Aligning</h2>
+<br><br>
+<ul class="incrementalh">
+<li class="fragmenth">Mapped region</li>
+<li class="fragmenth">Unmapped region</li>
+<ul class="incrementalh">
+<li class="fragmenth">Very high or low GC-content</li>
+<li class="fragmenth">Sequencing error </li>
+<li class="fragmenth">Repeat elements</li>
+<li class="fragmenth"> <p class="fragment highlight-red">Currently not discovered </p></li>
+</ul>
+</ul>
+</section>
+<section>
+<section class="slide level1" id="Data">
+<h2 id="Preparing the data">Data and Preparation</h2>
+<ul class="slide level1">
+<img src="figure/Twin.png" width=100% height=100%></p>
+</ul>
+</section>
+<section class="slide level1" id="Data and Prepration">
+<h2 id="Preparing the data2">Data and Preparation</h2>
+<br>
+<img src="figure/Data_twine.png" width=80% height=80%></p>
+</section>
+</section>
+<section>
+<section class="slide level1" id="Workflowes">
+<h2 id="Workflowes">Workflows</h2>
+<ul class="slide level1">
+<img src="figure/WorkFlows.png" width=100% height=100%></p>
+</ul>
+</section>
+<section class="slide level1" id="Workflowes2">
+<h2 id="Workflowes2">Pros and Cons</h2>
+<img src="figure/WorkFlows.png" width=50% height=50%></p>
+<small>
+<ul class="slide level1">
+<li class="fragment2">Strategy 1:</li>
+<ul class="incremental">
+<li class="fragment highlight-green">More reads lead to better assembly</li>
+<li class="fragment highlight-green">Higher N50</li>
+<li class="fragment highlight-red">Slow</li>
+<li class="fragment highlight-red">Needs a lot of memory</li>
+</ul>
+</ul>
+<ul class="slide level1">
+<li class="fragment2">Strategy 2:</li>
+<ul class="incremental">
+<li class="fragment highlight-green">Fast</li>
+<li class="fragment highlight-red">Some contigs disappeared</li>
+</ul>
+</ul>
+</small>
+</section>
+</section>
+<section>
+<section class="slide level1" id="Assembly result">
+<h2 id="Assembly">Assembly Results</h2>
+<img src="figure/Result1.png" width=800 height=550></p>
+</section>
+<section class="slide level1" id="Assembly result continue">
+<h2 id="Assembly.cont">Assembly Results</h2>
+<img src="figure/Result2.png" width=700 height=450></p>
+<h4 id="Assembly.cont.Q">Higher N50 or longer asmLg?</h4>
+</section>
+</section>
+<section>
+<section class="slide level1" id="Compare Assembly resultes">
+<h2>Compare Assemblies</h2>
+</section>
+<section class="slide level1" id="Compare Assembly resultes2">
+<figure>
+<img src="figure/kmerVScvCut.jpg" width="500" height="500"><figcaption>Assembly parameters (kmer-value/coverage-cutoff) as a function of indicators (asmlength/N50)</figcaption>
+</figure>
+</section>
+<section class="slide level1" id="Compare Assembly resultes3">
+<img src="figure/ctgCountVsN50.jpg" width="750" height="400">
+</section>
+<section class="slide level1" id="Assembly.cont.Q2">
+<h2 id="Assembly.cont.Q">Every Kmer/cvCut are useful</h2>
+<br>
+<h4>
+<ul class="incremental">
+<li class="fragment">Combine assembly results </li>
+<br>
+<small>
+<ol class="incremental">
+<li class="fragment">Blood - Blood</li>
+<li class="fragment">Saliva - Saliva</li>
+<li class="fragment">Blood - Saliva</li>
+<br>
+</ol>
+</small>
+<li class="fragment">Extract non-redundant contiges</li>
+</ul>
+</h4>
+</section>
+</section>
+<section>
+<section class="slide level1" id="Combining blood results">
+<h2>Combining blood results</h2>
+<br>
+<h4>
+<ul class="incremental3">
+<li class="fragment4">~113 million contigs</li>
+<li class="fragment4">~4 million non-redundant contigs</li>
+<li class="fragment4">¼ annotated against the nr_DB</li>
+<br>
+</ul>
+</h4>
+<!--p class="fragment roll-in"><img src="figure/Unannotated_blood.png" width="450" height="400"></p-->
+<img src="figure/Annotated_blood.png" width="850" height="400">
+</section>
+<section class="slide level1" id="Top3_1">
+<h2>Top3</h2>
+<br>
+<h4>
+<ul class="incremental">
+<li class="fragment3">Pongo abelii (Sumatran orangutan)</li>
+<li class="fragment3">Female</li>
+<li class="fragment3">Chromosome X</li>
+<li class="fragment3">Blood</li>
+</ul>
+</h4>
+<figure>
+<img src="figure/orangutan_blood.png"><figcaption>Pongo abelii chromosome X unlocalized genomic</figcaption>
+</figure>
+</section>
+<section class="slide level1" id="Top3_2">
+<h2>Top3</h2>
+<br>
+<h4>
+<ul class="incremental">
+<li class="fragment3">Toxoplasma gondii (Parasite)</li>
+<ul class="incremental">
+<li class="fragment3">Carried by many warm-blooded animals</li>
+<li class="fragment3">30%-65% of human have antibody</li>
+</ul>
+<br>
+<li class="fragment3">Malassezia globosa (fungi)</li>
+<ul class="incremental">
+<li class="fragment3">Naturally found on the skin surfaces of many animals, including humans</li>
+</ul>
+</ul>
+</section>
+</section>
+<section>
+<section class="slide level1" id="Combining saliva results">
+<h2>Combining Saliva results</h2>
+<br>
+<h4>
+<ul class="incremental3">
+<li class="fragment4">~510 million contigs</li>
+<li class="fragment4">~3 million non-redundant contigs</li>
+<li class="fragment4">¾ annotated against the nr_DB</li>
+<br>
+</ul>
+</h4>
+<!--p class="fragment roll-in"><img src="figure/Unannotated_blood.png" width="450" height="400"></p-->
+</section>
+<section class="slide level1" id="Unannotated">
+<h2>Unannotated part</h2>
+<br>
+<figure>
+<img src="figure/Unannotated.png" width="850" height="400"><figcaption>Comparing the length of unannotated contigs</figcaption>
+</figure>
+</section>
+</section>
+<section>
+<section class="slide level1" id="Combining blood-saliva results">
+<h2>Blood & Saliva</h2>
+<br>
+<h4>
+<ul class="incremental3">
+<li class="fragment4">~113 million contigs(Blood)</li>
+<li class="fragment4">~510 million contigs (Saliva)</li>
+<li class="fragment4">60171 non-redundant contigs</li>
+<li class="fragment4">1/6 annotated</li>
+<br>
+</ul>
+</h4>
+<figure>
+<img src="figure/BloodSaliva.png" width="500" height="250"><figcaption>DNA should be more or less the same on different tissues</figcaption>
+</figure>
+</section>
+<section class="slide level1" id="Blood saliva">
+<h2>Blood & Saliva</h2>
+<figure>
+<img src="figure/BloodSaliva_top.png" width="750" height="300">
+</figure>
+<ul class="incremental3">
+<li class="fragment4">All annotated are bacteria</li>
+<ul class="incremental3">
+<li class="fragment4">Streptococcus mitis SK579</li>
+<li class="fragment4">Prevotella</li>
+</ul>
+</ul>
+</section>
+</section>
+<section class="slide level1" id="TaxBlood">
+<h2>Taxonomy dist and freq of blood results</h2>
+<figure>
+<img src="figure/taxBlood2.png" width="750" height="700">
+</figure>
+</section>
+<section>
+<section class="slide level1" id="Chimp data">
+<h2>Chimp data</h2>
+<figure>
+<img src="figure/ChimpWorkFlows.png" width="600" height="500"><figcaption>Data sampled from gut</figcaption>
+</figure>
+</section>
+<section class="slide level1" id="Gut Blood saliva">
+<h2>Human & Chimp</h2>
+<br>
+<ul class="incremental3">
+<li class="fragment4">~105 million contigs(Gut)</li>
+<li class="fragment4">60171 non-redundant contigs (Blood and saliva)</li>
+<li class="fragment4">52113 non-redundant contigs (Blood and saliva & Gut)</li>
+<li class="fragment4">1/8 annotated</li>
+</ul>
+</section>
+<section class="slide level1" id="Gut Blood saliva2">
+<h2>Taxonomy dist and freq of human & chimp results</h2>
+<figure>
+<img src="figure/taxChimp.png" width="750" height="700">
+</figure>
+</section>
+</section>
+<section class="slide level1" id="Database">
+<h2 id="database">Database</h2>
+<figure>
+<img src="figure/Database.png" width="850" height="600">
+</figure>
+</section>
+<section class="slide level1" id="future-works">
+<h2 id="future-works">Conclusion & Future works</h2>
+<ul class="incremental3">
+<li class="fragment3">Some sequenced mapped to closely related species</li>
+<li class="fragment3">Larg fraction of bacteria lives with us</li>
+<li class="fragment3">Looking to the unannotated contigs </li>
+<li class="fragment3">Looking to the orphan reads</li>
+</ul>
+</section>
+<section class="slide level1" id="thank-you">
+<h2 id="thank-you">Acknowledgements</h2>
+<img src="figure/Lars.jpg" width="150" height="220">
+<img src="figure/JonatanH.jpg" width="170" height="220">
+<img src="figure/AnnaJ.jpg" width="170" height="220"><figcaption> <small>Lars feuk ------------ Jonatan Halvardsson ---- Anna Johansson</small></figcaption>
+</section>
+<section class="slide level1" id="thank-you">
+<h2 id="thank-you">Thank You!</h2>
+</section>
+<!-- SLIDE STUFF HERE -->
+ 			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

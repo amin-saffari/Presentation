@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title></title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- SLIDE STUFF HERE -->
+<section>
+<h2 class="title">Exploring the diversity of unmapped reads from human deep sequencing</h2>
+<br><br>
+<h3 class="author">Amin Saffari</h3>
+<h4 class="date">13-08-12</h4>
+<small> Uppsala University</small>
+</section>
+<section class="slide level1" id="agenda">
+<h2 id="agenda">Agenda</h2>
+<br><br>
+<ul class="incremental">
+<li class="fragment">Background</li>
+<li class="fragment">Motivation</li>
+<li class="fragment">Problem definition</li>
+<li class="fragment">Method</li>
+<li class="fragment">Results</li>
+<li class="fragment">Future works</li>
+</ul>
+</section>
+<section>
+<section class="slide level1" id="mass-spectrometry-background">
+<h2 id="mass-spectrometry-background">Shotgun proteomics background</h2>
+<ul class="slide level1">
+<img src="figure/unnamed-chunk-0.png" width="700" height="520"></p>
+</ul>
+</section>
+<section class="slide level1" id="example-1-multiple-plotse">
+<h2 id="example-1-multiple-plotse">Target and Decoy search</h2>
+<br>
+<h4>
+<ul class="incremental">
+<li class="fragment">Target DB: Theoratical spectra</li>
+<li class="fragment">Decoy DB: Simulation of incorrect spectra</li>
+<li class="fragment">PEP: Probability that a given peptide is incorrect <img src="figure/Formula3.png"></li>
+</ul>
+</h4>
+</section>
+</section>
+<section class="slide level1" id="mass-spectrometry-background3">
+<h2 id="mass-spectrometry-background3">Motivation</h2>
+<h4>
+<br><br>
+<ul class="incremental">
+<li class="fragment">Better score</li>
+<br>
+<li class="fragment">Probability of unique peptides</li>
+</ul>
+</h4>
+</section>
+<section>
+<section>
+<h2>Problem definition</h2>
+</section>
+<section class="slide level1" id="example-1-multiple-plots">
+<h3 id="example-1-multiple-plots">Unique and not unique PSMs</h3>
+<h4>
+<ul class="incremental">
+<li class="fragment">Normally using the best score</li>
+<li class="fragment">No methods to combin these PSMs</li>
+<li class="fragment">These PSMs are not probabilistically independent to each other respect to their score (can't using Fisher's method)</li>
+</ul>
+</h4>
+</p>
+<img src="figure/PSM1.png"></p>
+</section>
+</section>
+<section>
+<section>
+<h2>Mehode</h2>
+<ul class="slide level1">
+<img src="figure/unnamed-chunk-3.png" width="400" height="520"></p>
+</ul>
+</section>
+<section class="slide level1" id="example-2-plot-using-map">
+<h2 id="example-2-plot-using-map">Clustering methode</h2>
+<p>
+<p>
+<small>
+<ul class="slide level1">
+<img src="figure/Formula1.png"></p>
+</ul>
+<ul class="slide level1">
+<img src="figure/Formula2.png"></p>
+</ul>
+</small>
+</p>
+</p>
+<h4>
+<ul class="incremental">
+<li class="fragment">Computing the area under the curve (trapozoid) </li>
+<li class="fragment">Binning the data</li>
+</ul>
+</h4>
+</section>
+<section class="slide level1" id="example-3-multiple-plots">
+<h4 id="example-3-multiple-plots">Clustering two spectra</h4>
+<p>
+<p>
+<small>
+</small>
+</p>
+<img src="figure/Rplot1.png"></p>
+</section>
+</section>
+<section>
+<section>
+<h2>Results</h2>
+</section>
+<section class="slide level1" id="example-4-plot-using-map">
+<h4 id="example-4-plot-using-map">Score Before and After clustering</h4>
+<p>
+<p>
+<small>
+</small>
+</p>
+</p>
+<figure>
+<img src="figure/unnamed-chunk-1.png"><figcaption></figcaption>
+</figure>
+</section>
+<section class="slide level1" id="example-5-multiple-plots">
+<h4 id="example-5-multiple-plots">Target and Decoy database score distribution</h4>
+<p>
+<p>
+<small>
+</small>
+</p>
+<img src="figure/unnamed-chunk-2.png"></p>
+</section>
+</section>
+<section class="slide level1" id="future-works">
+<h2 id="future-works">Conclusion & Future works</h2>
+<ul class="incremental">
+<li class="fragment">Succeeding on unique peptide level statistic (~90%)</li>
+<li class="fragment">Clustering without binning </li>
+<li class="fragment">Clustering based on the theoratical spectra of the respect peptide</li>
+</ul>
+</section>
+<section class="slide level1" id="thank-you">
+<h2 id="thank-you">Acknowledgements</h2>
+<figure>
+<img src="figure/Group.JPG" height="520"><figcaption></figcaption>
+</figure>
+</section>
+<section class="slide level1" id="thank-you">
+<h2 id="thank-you">Thank You!</h2>
+</section>
+<!-- SLIDE STUFF HERE -->
+ 			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
